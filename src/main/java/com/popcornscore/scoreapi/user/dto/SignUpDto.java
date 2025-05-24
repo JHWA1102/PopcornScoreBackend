@@ -25,6 +25,7 @@ public class SignUpDto {
 	private String phone;
 	private String profileImg;
 	private String socialType;
+	private String email;
 	private List<String> roles = new ArrayList<>();
 	
 	public Member toEntity(String encodedPassword, List<String> roles) {
@@ -38,6 +39,7 @@ public class SignUpDto {
 				.profileImg(profileImg)
 				.socialType(socialType)
 				.roles(roles)
+				.email(email)
 				.build();
 	}
 }

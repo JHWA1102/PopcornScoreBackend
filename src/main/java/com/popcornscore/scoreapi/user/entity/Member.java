@@ -52,6 +52,8 @@ public class Member implements UserDetails {
 	
 	private String socialType;
 	
+	private String email;
+	
 	@ElementCollection(fetch = FetchType.EAGER)
 	@Builder.Default
 	private List<String> roles = new ArrayList<>();
@@ -99,6 +101,10 @@ public class Member implements UserDetails {
 		// TODO Auto-generated method stub
 		return username;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -134,5 +140,9 @@ public class Member implements UserDetails {
 
 	public void setSocialType(String socialType) {
 		this.socialType = socialType;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

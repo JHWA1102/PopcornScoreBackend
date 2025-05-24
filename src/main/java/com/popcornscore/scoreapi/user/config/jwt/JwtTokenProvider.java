@@ -39,7 +39,7 @@ public class JwtTokenProvider {
 	}
 	
 	// Member 정보를 가지고 AccessToken, RefreshToken을 생성하는 메서드
-	public JwtToken generateToken(Authentication authentication) {
+	public JwtToken generateToken(Authentication authentication, String username) {
 		
 		System.out.println("authentication Value : " + authentication);
 		// 권한 가져오기
@@ -68,6 +68,7 @@ public class JwtTokenProvider {
 				.grantType("Bearer")
 				.accessToken(accessToken)
 				.refreshToken(refreshToken)
+				.username(username)
 				.build();
 	}
 	

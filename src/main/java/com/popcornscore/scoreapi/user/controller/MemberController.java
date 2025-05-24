@@ -64,7 +64,7 @@ public class MemberController {
 		String password = signInDto.getPassword().toString();
 		log.info("request username = {}, password = {}", username, password);
 		JwtToken jwtToken = memberService.signIn(username, password);
-		log.info("jwtToken accessToke = {}, refreshToken = {}", jwtToken.getAccessToken(), jwtToken.getRefreshToken());
+		log.info("jwtToken accessToke = {}, refreshToken = {}, username = {}", jwtToken.getAccessToken(), jwtToken.getRefreshToken(), jwtToken.getUsername());
 		return jwtToken;
 	}
 	
@@ -154,7 +154,7 @@ public class MemberController {
 				System.out.println("기존 회원!");
 			} else {
 				System.out.println("신규 회원!");
-				SignUpDto signUpDto = new SignUpDto(username, "1234", "nickname1", "address1", "phone1", "profileImg1", "Google", null);
+				SignUpDto signUpDto = new SignUpDto(username, "aaa", "1234", "nickname1", "address1", "phone1", "profileImg1", "Google", null);
 				signUp(signUpDto);
 			}
 		} catch (Exception e) {

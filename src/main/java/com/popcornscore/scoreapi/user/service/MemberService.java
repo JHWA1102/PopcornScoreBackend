@@ -46,13 +46,15 @@ public class MemberService {
 		
 		System.out.println("Member Service Pass3!");
 		// 3. 인증 정보를 기반으로 JWT 토큰 생성
-		JwtToken jwtToken = jwtTokenProvider.generateToken(authentication);
+		JwtToken jwtToken = jwtTokenProvider.generateToken(authentication, username);
 		
 		return jwtToken;
 	}
 	
 	@Transactional
 	public MemberDto signUp(SignUpDto signUpDto) {
+		
+		System.out.println(signUpDto);
 		
 //		if(memberRepository.existsByUsername(signUpDto.getUsername())) {
 //			throw new IllegalArgumentException("이미 사용 중인 사용자 이름입니다.");

@@ -21,6 +21,7 @@ public class MemberDto {
 	private String address;
 	private String phone;
 	private String profileImg;
+	private String email;
 	
 	static public MemberDto toDto(Member member) {
 		return MemberDto.builder()
@@ -30,6 +31,7 @@ public class MemberDto {
 				.address(member.getAddress())
 				.phone(member.getPhone())
 				.profileImg(member.getProfileImg())
+				.email(member.getEmail())
 				.build();
 	}
 	
@@ -40,7 +42,8 @@ public class MemberDto {
 				.nickname(nickname)
 				.address(address)
 				.phone(phone)
-				.profileImg(profileImg).build();
+				.profileImg(profileImg)
+				.email(email).build();
 	}
 	
 }
